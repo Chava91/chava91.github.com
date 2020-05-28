@@ -31,7 +31,7 @@ let closse = document.querySelectorAll(".close");
       //Nos redireccionamos al home de la pagína y lo retrasamos setTimeout 600 milisegundos
       //setTimeout solo se ejecuta una vez retrasandose el tiempo que se le indica
       setTimeout(function(){
-        location.href = ("/Boletines")
+        location.href = ("./")
       },600);
       //setInterval se ejecuta cada cierto tieempo que se le indica
 

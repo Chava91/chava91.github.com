@@ -1,0 +1,207 @@
+/*Forma en que se define la especificidad en .css
+  <div class="content" id="div"></div>
+
+  div{
+  height: 200px;
+  width: 600;
+  }
+
+  div.content { background-color: yellow; }
+  div { background-color: black; }
+  .content { background-color: red; }
+
+  #div{ background-color: blue; }
+  #div.content{ background-color: purple; }
+  div#div.content{ background-color: grey; }
+  */
+/*Rojo #F00000*/
+/*Naranjado #FFCC7A*/
+/*Azul #1FA2FF*/
+/*Aqui va el comentario*/
+/*En esta instrucción se asigna el tipo de letra a todo el sitio por medio de la etiqueta "html"*/
+html{
+  font-family: 'Prompt', sans-serif;
+}
+
+/*Se elimina el subrayado de los hiperlinks y se les cambia el color por medio de la etiqueta "a"*/
+a{
+  text-decoration: none;
+  color: #1FA2FF;
+}
+
+img{
+  max-width: 100%;
+}
+
+a:hover{
+  opacity: 0.5;
+}
+
+/*Por medio del selector .title se cambian todas las letras a mayusculas, en este caso los titulos*/
+.title{
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/*Los elementos con el selector .container se les agrega un fonde de respaldo, se asigna un fondo degradado y
+se utiliza la caracteristica display-flex, y el asignamiento del tamaño del elemeto por medio de view-ports*/
+.container{
+  background: #FF512F;  /* Respaldo por si algun navegador no respeta o aun no reconoce el degradado */
+  background: -webkit-linear-gradient(to right, #F09819, #FF512F);
+  background: linear-gradient(to right, #F09819, #FF512F);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Se asigna formato al elemento div con el selector .content con respecto al elemento padre*/
+.content{
+  max-width: 960px;
+  width: 100%;
+  height: 80vh;
+  background-color: #fff;
+  /*box-shadow: diferenciaHorizontal diferenciaVertical desenfoque amplitud color*/
+  box-shadow: 0 3px 6px rgb(0, 0, 0, 16), 0 3px 6px rgb(0, 0, 0, 23);
+  /*Aqui se utilizan las shorthand properties utilizando un solo dato para darle el redondeado a todas las
+  esquinas del contenedor*/
+  border-radius: 9px;
+  position: relative;
+
+  /*Esta caracteristica permite controlar el texto que se desborda del elemeto*/
+  overflow: scroll;
+}
+
+.content{
+  padding: 1em;
+}
+td{
+  display: block;
+  width: 100%;
+}
+td:nth-of-type(1){
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #F00000;
+}
+th{
+  display: none;
+}
+
+.actions{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.close{
+  height: 40px;
+  width: 40px;
+  color: white;
+  border-radius: 50%;
+  background-color: #FFCC7A;
+  display: inline-block;
+  box-shadow: 0 3px 6px rgb(0, 0, 0, 16), 0 3px 6px rgb(0, 0, 0, 23);
+  font-weight: 300;
+  cursor: pointer;
+  /*Estos elementos justifican el por que agregar la X en un elemento span, para que flex box centre el elemento
+  dentro del boton circular padre*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Se asigna un entrelineado y ancho de fuente a los elemeots con el selector .paragraph*/
+.paragraph{
+  line-height: 1.8em;
+  font-weight: 300;
+}
+
+/*Se le asigna un color al icono de gasolina*/
+.fa-gas-pump{
+  color: red;
+}
+
+/*Se le da diseño a la tabla, como que abarque el tamaño total del elemento div donde se encuentra,
+ademas se elimina el espacio entre celdas y columnas, todo esto aplicado a quien tenga el selector .table*/
+.table{
+  width: 100%;
+  border-spacing: 0;
+}
+
+/*Se establece un espacio entre el contenido y los limites del contenedor ademas de que se alinian a la izquierda
+y todo esto se aplica a los elementos td y th que se encuentren dentro del elemento que contenga el selector
+.table*/
+.table td, .table th{
+  padding: 0.9em;
+  text-align: left;
+}
+
+/*Se utiliza una psudoclase para asignar un color a las filas pares  que contengan el elemento tr, el sual se
+encuentre dentro del elemento que contenga el selector .table*/
+.table tr:nth-child(even){background-color: #FFCC7A}
+
+.title-item{
+  /*border-bottom: solid;
+  border-width: 2px;
+  border-color: #F00000;*/
+  font-size: 2em;
+  border-bottom: solid 2px #F00000;
+  padding-bottom: 1em;
+  /*
+  Cuando se le ingresan los 4 valores
+   Padding: arriba derecha abajo izquierda
+  Cuando se ingresan 2 valores
+   Padding: arriba/abajo derecha/izquierda
+  Cuando se ingresa un valor
+   Padding: todos
+  */
+}
+
+.addres{
+  font-weight: bold;
+  color: #1FA2FF;
+  font-size: 1.2em;
+  margin-top: 2em;
+  display: inline-block;
+}
+
+.main-image{
+  float: left;
+  margin-right: 1em;
+}
+
+/*Se modifican las caracteristicas del elemento span utilizando shorthand properties*/
+.position{
+  background-color: #F00000;
+  color: white;
+  /*Se pueden utilizar las medidas em o en pixeles*/
+  padding: 0.5em 0.5em 0.9em 3em;
+  /*Tambien se puede realizar con las shorthand properties indicando 1, 2, 4 esquinas*/
+  /*border-radius: AQUI SE INDICAN LAS MEDIDAS DE REDONDEO DE 1, 2 o 4 ESQUINAS;*/
+  border-top-right-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+  margin-right: 0.5em;
+}
+
+@media (min-width: 900px){
+  th{
+    display: table-cell;
+  }
+  td{
+    width: auto;
+    display: table-cell;
+  }
+  td:nth-of-type(1){
+    font-size: 1em;
+  }
+  .content{
+    padding: 1.8em;
+  }
+}
+
+@media (min-height: 550px) {
+  .content{
+    height: 500px;
+  }
+}
